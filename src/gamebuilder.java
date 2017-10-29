@@ -17,12 +17,6 @@ public class gamebuilder {
     public static String FieldButton8 = gamefield[2][1];
     public static String FieldButton9 = gamefield[2][2];
 
-
-
-   static void printgame(){
-        System.out.print(gamefield[2][1]);
-    }
-
    // This method sets a sign into a file and var
    public String setSign(int PosX,int PosY){
        String whatsSet;
@@ -33,13 +27,54 @@ public class gamebuilder {
            lastSet = 1;
            gamefield[PosX][PosY] = "X";
            whatsSet = gamefield[PosX][PosY];
-           System.out.println(gamefield[PosX][PosY]);
+           checkWinner();
        }
        else{
            lastSet = 0;
            gamefield[PosX][PosY] = "O";
            whatsSet = gamefield[PosX][PosY];
+           checkWinner();
        }
        return whatsSet;
    }
+
+   public void checkWinner(){
+
+       if (gamefield[0][0] == "X" && gamefield[0][1] == "X" && gamefield[0][2] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[1][0] == "X" && gamefield[1][1] == "X" && gamefield[1][2] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[2][0] == "X" && gamefield[2][1] == "X" && gamefield[2][2] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[0][0] == "X" && gamefield[1][0] == "X" && gamefield[2][0] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[0][1] == "X" && gamefield[1][1] == "X" && gamefield[2][1] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[0][2] == "X" && gamefield[1][2] == "X" && gamefield[2][2] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[0][0] == "X" && gamefield[1][1] == "X" && gamefield[2][2] == "X"){
+           System.out.println("Player X won!");
+       }else if(gamefield[2][0] == "X" && gamefield[1][1] == "X" && gamefield[0][2] == "X"){
+           System.out.println("Player X won!");
+       }
+
+       if (gamefield[0][0] == "O" && gamefield[0][1] == "O" && gamefield[0][2] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[1][0] == "O" && gamefield[1][1] == "O" && gamefield[1][2] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[2][0] == "O" && gamefield[2][1] == "O" && gamefield[2][2] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[0][0] == "O" && gamefield[1][0] == "O" && gamefield[2][0] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[0][1] == "O" && gamefield[1][1] == "O" && gamefield[2][1] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[0][2] == "O" && gamefield[1][2] == "O" && gamefield[2][2] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[0][0] == "O" && gamefield[1][1] == "O" && gamefield[2][2] == "O"){
+           System.out.println("Player O won!");
+       }else if(gamefield[2][0] == "O" && gamefield[1][1] == "O" && gamefield[0][2] == "O"){
+           System.out.println("Player O won!");
+       }
+   }
+
 }

@@ -135,22 +135,4 @@ public class gridpane extends Application {
         }
     }
 
-    //public void UpdateGUIThread() {
-    //    final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-    //    scheduler.scheduleWithFixedDelay(new Runnable() {
-    //        @Override
-    //        public void run() {
-    //            Platform.runLater(() -> {
-    //                        UpdateValues();
-    //                    }
-    //            );
-    //        }// Change delay to 400 after testing
-    //    }, 0, 400, TimeUnit.MILLISECONDS);
-    //}
-//
-    //private void UpdateValues() {
-//
-//
-    //}
-
 }
