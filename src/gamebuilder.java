@@ -33,8 +33,8 @@ public class gamebuilder {
            gameStart = 1;
        }
 
+       // Check who can play and set tag in gamefield
        if (lastSet == 0){
-           //add write into file
            lastSet = 1;
            gamefield[PosX][PosY] = "X";
            whatsSet = gamefield[PosX][PosY];

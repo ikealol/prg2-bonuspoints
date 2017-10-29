@@ -136,11 +136,6 @@ public class gridpane extends Application {
 
     public static void main(String[] args) throws IOException {
         launch(args);
-
-        gamebuilder gamebuilder = new gamebuilder();
-        gamebuilder.writeLog("###################################################################################");
-        gamebuilder.writeLog("################################ New game started! ################################");
-        gamebuilder.writeLog("###################################################################################");
     }
 
     public void showWinner(String winner){
