@@ -38,15 +38,15 @@ public class gamebuilder {
            lastSet = 1;
            gamefield[PosX][PosY] = "X";
            whatsSet = gamefield[PosX][PosY];
-           checkWinner();
            writeLog("Player X plays - Position X: " + PosX + " Position Y: " + PosY);
+           checkWinner();
        }
        else{
            lastSet = 0;
            gamefield[PosX][PosY] = "O";
            whatsSet = gamefield[PosX][PosY];
-           checkWinner();
            writeLog("Player O plays - Position X: " + PosX + " Position Y: " + PosY);
+           checkWinner();
        }
        return whatsSet;
    }
@@ -55,55 +55,55 @@ public class gamebuilder {
        gridpane gridpane = new gridpane();
 
        if (gamefield[0][0] == "X" && gamefield[0][1] == "X" && gamefield[0][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[1][0] == "X" && gamefield[1][1] == "X" && gamefield[1][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[2][0] == "X" && gamefield[2][1] == "X" && gamefield[2][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][0] == "X" && gamefield[1][0] == "X" && gamefield[2][0] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][1] == "X" && gamefield[1][1] == "X" && gamefield[2][1] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][2] == "X" && gamefield[1][2] == "X" && gamefield[2][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][0] == "X" && gamefield[1][1] == "X" && gamefield[2][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[2][0] == "X" && gamefield[1][1] == "X" && gamefield[0][2] == "X"){
-           gridpane.showWinner("X");
            writeLog("Player X won!");
+           gridpane.showWinner("X");
        }
 
        if (gamefield[0][0] == "O" && gamefield[0][1] == "O" && gamefield[0][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[1][0] == "O" && gamefield[1][1] == "O" && gamefield[1][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[2][0] == "O" && gamefield[2][1] == "O" && gamefield[2][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][0] == "O" && gamefield[1][0] == "O" && gamefield[2][0] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][1] == "O" && gamefield[1][1] == "O" && gamefield[2][1] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][2] == "O" && gamefield[1][2] == "O" && gamefield[2][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][0] == "O" && gamefield[1][1] == "O" && gamefield[2][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[2][0] == "O" && gamefield[1][1] == "O" && gamefield[0][2] == "O"){
-           gridpane.showWinner("O");
            writeLog("Player O won!");
+           gridpane.showWinner("O");
 
        }
    }
