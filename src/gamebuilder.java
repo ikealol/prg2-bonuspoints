@@ -5,7 +5,7 @@ public class gamebuilder {
 
     private int lastSet = 0;
     // build gamedashboard
-    static String[][] gamefield = {{"1", "2", "3"},{"4", "5", "6"},{"7", "8", "9"}};
+    static String[][] gamefield = {{"?", "?", "?"},{"?", "?", "?"},{"?", "?", "?"}};
 
     public static String FieldButton1 = gamefield[0][0];
     public static String FieldButton2 = gamefield[0][1];
@@ -39,41 +39,43 @@ public class gamebuilder {
    }
 
    public void checkWinner(){
+       gridpane gridpane = new gridpane();
 
        if (gamefield[0][0] == "X" && gamefield[0][1] == "X" && gamefield[0][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[1][0] == "X" && gamefield[1][1] == "X" && gamefield[1][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[2][0] == "X" && gamefield[2][1] == "X" && gamefield[2][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][0] == "X" && gamefield[1][0] == "X" && gamefield[2][0] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][1] == "X" && gamefield[1][1] == "X" && gamefield[2][1] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][2] == "X" && gamefield[1][2] == "X" && gamefield[2][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[0][0] == "X" && gamefield[1][1] == "X" && gamefield[2][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }else if(gamefield[2][0] == "X" && gamefield[1][1] == "X" && gamefield[0][2] == "X"){
-           System.out.println("Player X won!");
+           gridpane.showWinner("X");
        }
 
        if (gamefield[0][0] == "O" && gamefield[0][1] == "O" && gamefield[0][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[1][0] == "O" && gamefield[1][1] == "O" && gamefield[1][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[2][0] == "O" && gamefield[2][1] == "O" && gamefield[2][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][0] == "O" && gamefield[1][0] == "O" && gamefield[2][0] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][1] == "O" && gamefield[1][1] == "O" && gamefield[2][1] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][2] == "O" && gamefield[1][2] == "O" && gamefield[2][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[0][0] == "O" && gamefield[1][1] == "O" && gamefield[2][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
        }else if(gamefield[2][0] == "O" && gamefield[1][1] == "O" && gamefield[0][2] == "O"){
-           System.out.println("Player O won!");
+           gridpane.showWinner("O");
+
        }
    }
 

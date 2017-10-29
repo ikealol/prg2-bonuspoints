@@ -2,11 +2,17 @@
  * Created by Richard on 29/10/2017.
  */
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+
+import java.util.Optional;
 
 
 public class gridpane extends Application {
@@ -57,6 +63,8 @@ public class gridpane extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+
+
         // Eventhandler Buttons
         ButtonField1.setOnAction((event) -> {
             setButtonGUI(1);
@@ -89,6 +97,18 @@ public class gridpane extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void showWinner(String winner){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Winner");
+        alert.setHeaderText("We have a winner!");
+        alert.setContentText("Player " + winner + " won the game!");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            System.exit(0);
+        }
     }
 
     public void setButtonGUI(int buttonGUI) {
