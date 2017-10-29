@@ -1,9 +1,12 @@
+import java.io.*;
+
 /**
  * Created by Richard on 21/10/2017.
  */
 public class gamebuilder {
 
     private int lastSet = 0;
+    private int gameStart = 0;
     // build gamedashboard
     static String[][] gamefield = {{"?", "?", "?"},{"?", "?", "?"},{"?", "?", "?"}};
 
@@ -17,10 +20,18 @@ public class gamebuilder {
     public static String FieldButton8 = gamefield[2][1];
     public static String FieldButton9 = gamefield[2][2];
 
-   // This method sets a sign into a file and var
-   public String setSign(int PosX,int PosY){
+    // This method sets a sign into a file and var
+   public String setSign(int PosX,int PosY) throws IOException {
        String whatsSet;
-       // 0 = O und 1 = X
+
+       // Message for log that a new game started
+       if (gameStart == 0){
+           writeLog("###################################################################################");
+           writeLog("################################ New game started! ################################");
+           writeLog("###################################################################################");
+
+           gameStart = 1;
+       }
 
        if (lastSet == 0){
            //add write into file
@@ -28,55 +39,80 @@ public class gamebuilder {
            gamefield[PosX][PosY] = "X";
            whatsSet = gamefield[PosX][PosY];
            checkWinner();
+           writeLog("Player X plays - Position X: " + PosX + " Position Y: " + PosY);
        }
        else{
            lastSet = 0;
            gamefield[PosX][PosY] = "O";
            whatsSet = gamefield[PosX][PosY];
            checkWinner();
+           writeLog("Player O plays - Position X: " + PosX + " Position Y: " + PosY);
        }
        return whatsSet;
    }
 
-   public void checkWinner(){
+   public void checkWinner() throws IOException {
        gridpane gridpane = new gridpane();
 
        if (gamefield[0][0] == "X" && gamefield[0][1] == "X" && gamefield[0][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[1][0] == "X" && gamefield[1][1] == "X" && gamefield[1][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[2][0] == "X" && gamefield[2][1] == "X" && gamefield[2][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[0][0] == "X" && gamefield[1][0] == "X" && gamefield[2][0] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[0][1] == "X" && gamefield[1][1] == "X" && gamefield[2][1] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[0][2] == "X" && gamefield[1][2] == "X" && gamefield[2][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[0][0] == "X" && gamefield[1][1] == "X" && gamefield[2][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }else if(gamefield[2][0] == "X" && gamefield[1][1] == "X" && gamefield[0][2] == "X"){
            gridpane.showWinner("X");
+           writeLog("Player X won!");
        }
 
        if (gamefield[0][0] == "O" && gamefield[0][1] == "O" && gamefield[0][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[1][0] == "O" && gamefield[1][1] == "O" && gamefield[1][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[2][0] == "O" && gamefield[2][1] == "O" && gamefield[2][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[0][0] == "O" && gamefield[1][0] == "O" && gamefield[2][0] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[0][1] == "O" && gamefield[1][1] == "O" && gamefield[2][1] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[0][2] == "O" && gamefield[1][2] == "O" && gamefield[2][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[0][0] == "O" && gamefield[1][1] == "O" && gamefield[2][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
        }else if(gamefield[2][0] == "O" && gamefield[1][1] == "O" && gamefield[0][2] == "O"){
            gridpane.showWinner("O");
+           writeLog("Player O won!");
 
        }
+   }
+
+   void writeLog(String log) throws IOException {
+       BufferedWriter writer = new BufferedWriter(new FileWriter("tictactoe_gamelog.txt", true));
+
+       writer.append(log + "\n");
+       writer.close();
    }
 
 }

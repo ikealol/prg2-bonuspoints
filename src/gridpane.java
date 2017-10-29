@@ -2,8 +2,6 @@
  * Created by Richard on 29/10/2017.
  */
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -11,13 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
+import java.io.IOException;
 import java.util.Optional;
 
 
 public class gridpane extends Application {
     gamebuilder gamebuilder = new gamebuilder();
-
 
     Button ButtonField1 = new Button(gamebuilder.FieldButton1);
     Button ButtonField2 = new Button(gamebuilder.FieldButton2);
@@ -73,36 +70,77 @@ public class gridpane extends Application {
 
         // Eventhandler Buttons
         ButtonField1.setOnAction((event) -> {
-            setButtonGUI(1);
+            try {
+                setButtonGUI(1);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField2.setOnAction((event) -> {
-            setButtonGUI(2);
+            try {
+                setButtonGUI(2);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField3.setOnAction((event) -> {
-            setButtonGUI(3);
+            try {
+                setButtonGUI(3);
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField4.setOnAction((event) -> {
-            setButtonGUI(4);
+            try {
+                setButtonGUI(4);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField5.setOnAction((event) -> {
-            setButtonGUI(5);
+            try {
+                setButtonGUI(5);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField6.setOnAction((event) -> {
-            setButtonGUI(6);
+            try {
+                setButtonGUI(6);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField7.setOnAction((event) -> {
-            setButtonGUI(7);
+            try {
+                setButtonGUI(7);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField8.setOnAction((event) -> {
-            setButtonGUI(8);
+            try {
+                setButtonGUI(8);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
         ButtonField9.setOnAction((event) -> {
-            setButtonGUI(9);
+            try {
+                setButtonGUI(9);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch(args);
+
+        gamebuilder gamebuilder = new gamebuilder();
+        gamebuilder.writeLog("###################################################################################");
+        gamebuilder.writeLog("################################ New game started! ################################");
+        gamebuilder.writeLog("###################################################################################");
     }
 
     public void showWinner(String winner){
@@ -117,7 +155,7 @@ public class gridpane extends Application {
         }
     }
 
-    public void setButtonGUI(int buttonGUI) {
+    public void setButtonGUI(int buttonGUI) throws IOException {
         switch (buttonGUI) {
             case 1:
                 ButtonField1.setText(gamebuilder.setSign(0, 0));
