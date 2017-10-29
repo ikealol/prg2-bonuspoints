@@ -2,24 +2,12 @@
  * Created by Richard on 29/10/2017.
  */
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import sun.applet.Main;
 
-import java.io.FileNotFoundException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-import static javafx.application.Application.launch;
 
 public class gridpane extends Application {
     gamebuilder gamebuilder = new gamebuilder();
