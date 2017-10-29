@@ -63,7 +63,13 @@ public class gridpane extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
+        // Display Rules of the game at the beginning
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Rules");
+        alert.setHeaderText(null);
+        alert.setContentText("Welcome to my TIC TAC TOE game.\n\n Player X will start the game.\n The first player who has three symbols in a row will win the game.\n\n Confirm with OK and click on your field where you want to put your cross.");
 
+        alert.showAndWait();
 
         // Eventhandler Buttons
         ButtonField1.setOnAction((event) -> {
@@ -101,8 +107,8 @@ public class gridpane extends Application {
 
     public void showWinner(String winner){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Winner");
-        alert.setHeaderText("We have a winner!");
+        alert.setTitle("We have a winner!");
+        alert.setHeaderText(null);
         alert.setContentText("Player " + winner + " won the game!");
 
         Optional<ButtonType> result = alert.showAndWait();
