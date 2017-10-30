@@ -73,63 +73,63 @@ public class gridpane extends Application {
             try {
                 setButtonGUI(1);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField2.setOnAction((event) -> {
             try {
                 setButtonGUI(2);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField3.setOnAction((event) -> {
             try {
                 setButtonGUI(3);
             }catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField4.setOnAction((event) -> {
             try {
                 setButtonGUI(4);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField5.setOnAction((event) -> {
             try {
                 setButtonGUI(5);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField6.setOnAction((event) -> {
             try {
                 setButtonGUI(6);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField7.setOnAction((event) -> {
             try {
                 setButtonGUI(7);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField8.setOnAction((event) -> {
             try {
                 setButtonGUI(8);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
         ButtonField9.setOnAction((event) -> {
             try {
                 setButtonGUI(9);
             } catch (IOException e) {
-                e.printStackTrace();
+                showWriteLogWarning();
             }
         });
     }
@@ -180,6 +180,15 @@ public class gridpane extends Application {
                 ButtonField9.setText(gamebuilder.setSign(2, 2));
                 break;
         }
+    }
+
+    public void showWriteLogWarning(){
+        Alert alert2 = new Alert(Alert.AlertType.WARNING);
+        alert2.setTitle("IO Warning");
+        alert2.setHeaderText(null);
+        alert2.setContentText("There is a problem with the log file!\nPlease check if tictactoe_gamelog.txt is avaiable and writeable.");
+
+        alert2.showAndWait();
     }
 
 }

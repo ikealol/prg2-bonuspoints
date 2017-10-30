@@ -7,7 +7,7 @@ public class gamebuilder {
 
     private int lastSet = 0;
     private int gameStart = 0;
-    // build gamedashboard
+    // build gamedashboard with two dimensional array
     static String[][] gamefield = {{"?", "?", "?"},{"?", "?", "?"},{"?", "?", "?"}};
 
     public static String FieldButton1 = gamefield[0][0];
