@@ -194,6 +194,8 @@ public class gridpane extends Application implements GUIconfig {
 }
 
 interface GUIconfig{
+    // gap between buttons and margin from border
     int gap = 5;
+    // size of the buttons
     int buttonsize = 35;
 }
