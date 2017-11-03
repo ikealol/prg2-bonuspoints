@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 
-public class gridpane extends Application {
+public class gridpane extends Application implements GUIconfig {
     gamebuilder gamebuilder = new gamebuilder();
 
     Button ButtonField1 = new Button(gamebuilder.FieldButton1);
@@ -30,9 +30,9 @@ public class gridpane extends Application {
     public void start(Stage primaryStage) throws Exception {
         GridPane gridpane = new GridPane();
 
-        gridpane.setPadding(new Insets(5));
-        gridpane.setHgap(5);
-        gridpane.setVgap(5);
+        gridpane.setPadding(new Insets(gap));
+        gridpane.setHgap(gap);
+        gridpane.setVgap(gap);
 
         gridpane.add(ButtonField1, 0, 0);
         gridpane.add(ButtonField2, 0, 1);
@@ -45,15 +45,15 @@ public class gridpane extends Application {
         gridpane.add(ButtonField9, 2, 2);
 
         //ButtonField1.setPrefWidth(100);
-        ButtonField1.setMinSize(35,35);
-        ButtonField2.setMinSize(35,35);
-        ButtonField3.setMinSize(35,35);
-        ButtonField4.setMinSize(35,35);
-        ButtonField5.setMinSize(35,35);
-        ButtonField6.setMinSize(35,35);
-        ButtonField7.setMinSize(35,35);
-        ButtonField8.setMinSize(35,35);
-        ButtonField9.setMinSize(35,35);
+        ButtonField1.setMinSize(buttonsize,buttonsize);
+        ButtonField2.setMinSize(buttonsize,buttonsize);
+        ButtonField3.setMinSize(buttonsize,buttonsize);
+        ButtonField4.setMinSize(buttonsize,buttonsize);
+        ButtonField5.setMinSize(buttonsize,buttonsize);
+        ButtonField6.setMinSize(buttonsize,buttonsize);
+        ButtonField7.setMinSize(buttonsize,buttonsize);
+        ButtonField8.setMinSize(buttonsize,buttonsize);
+        ButtonField9.setMinSize(buttonsize,buttonsize);
 
         Scene scene = new Scene(gridpane, 125, 125);
         primaryStage.setTitle("Tic Tac Toe");
@@ -191,4 +191,9 @@ public class gridpane extends Application {
         alert2.showAndWait();
     }
 
+}
+
+interface GUIconfig{
+    int gap = 5;
+    int buttonsize = 35;
 }
